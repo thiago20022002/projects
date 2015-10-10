@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+
+<!-- user input div , using bootstrap grid system. 
+this 'form' populate the json element as a key-value mapping. -->                             
+<div class="col-md-12">                                                                                                                          
+    <div class="col-md-6">                                                                                                                         
+        <div class="form-group">                                                                                                                     
+            <!-- property ele_name in the json data -->                                                                                                
+            <label for="ele_name">Container Tag Name </label>                                                                                          
+            <input id="ele_name" type="search" class="form-control input-md" placeholder="pre/h4/textarea/button/..."/>                                
+        </div>                                                                                                                                       
+        <div class="form-group">                                                                                                                     
+            <!-- property text in the json data-->                                                                                                     
+            <label for="text_input">container text output</label>                                                                                      
+            <input id="text_input" type="search" class="form-control input-md" placeholder="text"/>                                                    
+        </div>                                                                                                                                       
+        <div class="form-group">                                                                                                                     
+            <!-- property class in the json data-->                                                                                                    
+            <label for="classes">Bootstrap classes</label>                                                                                             
+            <input id="classes" type="search" class="form-control input-md" placeholder="class name"/>                                                 
+        </div>                                                                                                                                       
+        <div class="form-group">                                                                                                                     
+            <!-- property rules in the json data-->                                                                                                    
+            <label for="css_rules">css rules</label>                                                                                                   
+            <textarea id="css_rules" class="form-control input-md" placeholder="color:red"></textarea>                                                 
+        </div>  
+
+
+        <div class="form-group">                                                                                                                     
+            <!-- user input data is complete, Jquery will add the attribute 'onclick'                                                                  
+                 on document.ready();                                                                                                                  
+            -->                                                                                                                                      
+            <button id="btn_add_element" class="btn btn-primary">Add Element</button>                                                                  
+
+            <!-- json2html() function is defined in the js/json_js/json.js file. -->                                                                   
+            <button  class="btn btn-primary" onclick="json2html()">View JSON Data</button>                                                             
+        </div>                                                                                                                                       
+    </div>                                                                                                                                         
+    <div class="col-md-6">                                                                                                                         
+        <!--json2html() will output the result in the json_output div.  -->                                                                          
+        <ul class="list-group" id="json_output">                                                                                                     
+        </ul>                                                                                                                                        
+    </div>                                                                                                                                         
+</div>                                                                                                                                           
+                                                                                                                                          
+<div class="col-md-6">                                                                                                                         
+    <!--json2html() will output the result in the json_output div.  -->                                                                          
+    <ul class="list-group" id="json_output">                                                                                                     
+    </ul>                                                                                                                                        
+</div>                                                                                                                                         
+
+<div class="col-md-8">                                                                                                                                            
+    <pre id="json_container">                                                                                                                      
+    </pre>                                                                                                                                         
+</div>                                                                                                                                           
+<div class="form-group col-md-8">                                                                                                                         
+    <button id="btn_hello_world" value="hello_world.json" class="btn btn-primary">hello_world.json</button>                                        
+    <button id="btn_bootstrap_glyphicons" value="bootstrap_glyphicons.json" class="btn btn-primary">bootstrap_glyphicons.json</button>             
+    <button id="btn_clear" class="btn btn-primary">Initialize new json object</button>                                                             
+</div> 
+
+<script src="js/dynamic_json_object/dynamic_json.js"></script>

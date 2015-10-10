@@ -1,0 +1,14 @@
+{
+    "0": {
+        "container": "button",
+        "class": "btn btn-primary",
+        "rules": "color:yellow",
+        "text": "Hello Word!"
+    },
+    "1": {
+        "container": "span",
+        "class": "label label-default",
+        "rules": "color:green;\nfont-size:30px\n",
+        "text": "Hello World!"
+    }
+}

@@ -1,0 +1,17 @@
+{"0":                                                                                                                                                                                   
+ {"container":"span",                                                                                                                                                                   
+  "class":"glyphicon glyphicon-plus",                                                                                                                                                   
+  "rules":"font-size:30px",                                                                                                                                                             
+  "text":"plus"                                                                                                                                                                         
+ },                                                                                                                                                                                     
+ "1":                                                                                                                                                                                   
+ {"container":"span",                                                                                                                                                                   
+  "class":"glyphicon glyphicon-signal",                                                                                                                                                 
+  "rules":"color:red","text":" wifi signal is high"                                                                                                                                     
+ },                                                                                                                                                                                     
+ "2":                                                                                                                                                                                   
+ {"container":"span",                                                                                                                                                                   
+  "class":"glyphicon glyphicon-ok",                                                                                                                                                     
+  "rules":"color:green",                                                                                                                                                                
+  "text":" check"}                                                                                                                                                                      
+} 
