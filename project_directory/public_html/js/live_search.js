@@ -50,21 +50,15 @@ function fetch_sentence(string, index) {
     return start + array[index] + end;
 }
 
-function clear_results() {
 
-    var element = document.getElementById("live_search_result");
-    while (element.firstChild) {
-        element.removeChild(element.firstChild);
-    }
-}
 
 function keypress_live() {
     $("#live_search").keypress(function (e) {
-        clear_results();
+        clear_results(document.getElementById("live_search_result"));
         result_page($(this).val() + String.fromCharCode(e.keyCode));
     });
     $("#live_search").keydown(function (event) {
-        clear_results();
+        clear_results(document.getElementById("live_search_result"));
         if (event.which === 13) {
             result_page($(this).val());
         } else if (event.which === 8) {
@@ -93,12 +87,13 @@ function create_header() {
 }
 
 function display_result(string, json_object, query) {
-    var element = document.getElementById("live_search_result");
-    var tr = document.createElement("li");
-    tr.setAttribute("class", "list-group-item");
+
+    var element = $("#live_search_result");
+    var tr = $("<li></li>");
+    tr.attr("class", "list-group-item");
     var dom = createHTMLObject(json_object, string, query);
-    tr.appendChild(dom);
-    element.appendChild(tr);
+    tr.append(dom);
+    element.append(tr);
 }
 
 
@@ -129,52 +124,42 @@ function spanHighlight(query, data)
 }
 
 function createHTMLObject(json_object, data, query) {
-    var file_div = "";
+    var file_div = create_github_div(json_object.gib_hub_url + json_object.url);
+    ;
     for (var i = 0; i < json_object.files.length; i++) {
-        file_div += "<a target='_blank' href='" + json_object.gib_hub_url + json_object.files[i].file + "'> " + getFileType(json_object.files[i].file) + "</a>";
+        file_div += create_github_div(json_object.gib_hub_url + json_object.files[i].file);
     }
 
-    var s = "<div class='row'>\
-    <div class='col-md-1'>\
-        <a class='pointer' onclick='dynamic_call(\"" + json_object.name + "\")'>\
-            <span class='glyphicon glyphicon-circle-arrow-right'>\
-            </span>\
-        </a>\
-    </div>\
-    <div class='col-md-2'>\
-        <a class='pointer' onclick='dynamic_call(\"" + json_object.name + "\")'>\
-        " + json_object.p_name + "\
-        </a>\
-    </div>\
-    <div class='col-md-6'>" + spanHighlight(query, data) + "\
-    </div>\
-    <div class='cold-md-2'>\
-        <span class='fa fa-github'  ></span>\
-         <a target='_blank' href='" + json_object.gib_hub_url + json_object.url + "'>" + getFileType(json_object.url) + "</a>\
-         " + file_div + "\
-    </div>\
-</div>";
-    var htmlObject = document.createElement('div');
-    htmlObject.innerHTML = s;
-    return htmlObject;
+    var row = create_dynamic_div("div", "row", "", "");
+    var col_md_1 = create_dynamic_div("div", "col-md-1", "", "");
+    var col_md_2_a = create_dynamic_div("div", "col-md-2", "", "");
+    var col_md_6 = create_dynamic_div("div", "col-md-6", "", spanHighlight(query, data));
+    var col_md_2_b = create_dynamic_div("div", "col-md-2", "", "");
+    var gli_md_1 = create_dynamic_div("a", "pointer", "onclick='dynamic_call(\"" + json_object.name + "\")'", "");
+    var span_gli_md_1 = create_dynamic_div("span", "glyphicon glyphicon-circle-arrow-right", "", "");
+    var gli_md_2 = create_dynamic_div("a", "pointer", "onclick='dynamic_call(\"" + json_object.name + "\")'", json_object.p_name);
+    var span_md_2_b = create_dynamic_div("span", "fa fa-github", "", "");
+    row.append(col_md_1);
+    row.append(col_md_2_a);
+    row.append(col_md_6);
+    row.append(col_md_2_b);
+    col_md_1.append(gli_md_1);
+    gli_md_1.append(span_gli_md_1);
+    col_md_2_a.append(gli_md_2);
+    col_md_2_b.append(span_md_2_b);
+    col_md_2_b.append($(file_div));
+
+    return row;
+}
+
+function create_dynamic_div(tag, className, attr, data) {
+
+    var str = '<' + tag + ' class="' + className + '" ' + attr + '>' + data + ' </tag>';
+    return $(str);
 }
 
 
-function getFileType(file) {
-    if (file.endsWith(".html")) {
-        return "Html";
-    }
-    if (file.endsWith(".json")) {
-        return "Json";
-    }
-    if (file.endsWith(".js")) {
-        return "JS";
-    }
-
-    return "File";
-}
 
 String.prototype.endsWith = function (suffix) {
     return RegExp(suffix + "$").test(this);
 }
-;
