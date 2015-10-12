@@ -1,3 +1,12 @@
+/**
+ *  
+ * 
+ * 
+ * 
+ * Created by Thiago G Goncalves on 9/11/15
+ */
+
+
 
 $(document).ready(function () {
     keypress_live();
@@ -153,7 +162,6 @@ function createHTMLObject(json_object, data, query) {
 }
 
 function create_dynamic_div(tag, className, attr, data) {
-
     var str = '<' + tag + ' class="' + className + '" ' + attr + '>' + data + ' </tag>';
     return $(str);
 }
