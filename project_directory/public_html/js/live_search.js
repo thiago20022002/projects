@@ -149,9 +149,7 @@ function createHTMLObject(json_object, data, query) {
     <div class='col-md-6'>" + spanHighlight(query, data) + "\
     </div>\
     <div class='cold-md-2'>\
-        <a class='size20'>\
         <span class='fa fa-github'  ></span>\
-         <\a>\
          <a target='_blank' href='" + json_object.gib_hub_url + json_object.url + "'>" + getFileType(json_object.url) + "</a>\
          " + file_div + "\
     </div>\
