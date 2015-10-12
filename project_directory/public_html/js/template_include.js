@@ -7,55 +7,9 @@ var node = {
     'current_element': 'home' // default home page
 };
 
-var web_site_information = {
-    'info': [
-        {
-            'name': 'home',
-            'url': 'content/home.html',
-            'p_name': 'Home page',
-            'nav_id': 'home',
-            'gib_hub_url' : "https://github.com/thiago20022002/projects/blob/gh-pages/project_directory/public_html/content/home.html"
-            
-        },
-        {
-            'name': 'solutions',
-            'url': 'content/solutions.html',
-            'p_name': 'permutation project',
-            'nav_id': 'drop_bar',
-            'gib_hub_url' : "https://github.com/thiago20022002/projects/blob/gh-pages/project_directory/public_html/content/solutions.html"
-        },
-        {
-            'name': 'json2html',
-            'url': 'content/json2html.html',
-            'p_name': 'Dynamic Json Data',
-            'nav_id': 'drop_bar',
-            'gib_hub_url' : "https://github.com/thiago20022002/projects/blob/gh-pages/project_directory/public_html/content/json2html.html"
+var web_site_information;
 
-        },
-        {
-            'name': 'sappytrends',
-            'url': 'content/sappytrends.html',
-            'p_name': 'Sappy Trends',
-            'nav_id': 'drop_bar',
-            'gib_hub_url' : "https://github.com/thiago20022002/projects/blob/gh-pages/project_directory/public_html/content/sappytrends.html"
 
-        },
-        {
-            'name': 'mic1',
-            'url': 'content/mic1emulator.html',
-            'p_name': 'Mic-1 Emulator',
-            'nav_id': 'drop_bar',
-            'gib_hub_url' : "https://github.com/thiago20022002/projects/blob/gh-pages/project_directory/public_html/content/mic1emulator.html"
-
-        }
-////,
-     //   {
-     //       'name': 'livesearch',
-     //       'url': '',
-     //       'p_name': 'Website search Engine'
-     //   }
-    ]
-};
 
 function findInfomationByName(name_id) {
     var info = web_site_information.info;
@@ -73,12 +27,16 @@ function findInfomationByName(name_id) {
 
 function includeTemplate() {
     $(document).ready(function () {
+
         $.get("content/nav.html", function (data) {
             $("#nav_bar").html(data);
             $("#" + node.current_element).attr('class', 'active');
         });
-        
-        dynamic_call('home');
+        $.get("content/web_site_info.json", function (data) {
+            web_site_information = data;
+            dynamic_call('home');
+        });
+
     });
 }
 
