@@ -84,7 +84,7 @@ function create_header() {
     tr.setAttribute("class", "list-group-item");
     var s = "<div class='row'>\
                 <div class='col-md-2'>Project Name</div>\
-                <div class='col-md-6'>Query Result</div>\
+                <div class='col-md-6'>Query Match</div>\
                 <div class='cold-md-4'>GitHub Project File(s)</div>\
             </div>";
     var htmlObject = document.createElement('div');
