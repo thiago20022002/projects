@@ -6,9 +6,8 @@
         "text": "Hello Word!"
     },
     "1": {
-        "container": "span",
-        "class": "label label-default",
-        "rules": "color:green;\nfont-size:30px\n",
+        "container": "pre",
+        "rules": "color:green;",
         "text": "Hello World!"
     }
 }

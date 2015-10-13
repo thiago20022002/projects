@@ -1,17 +1,23 @@
 /**
- *  
- * 
- * 
- * 
- * Created by Thiago G Goncalves on 9/11/15
+ File:  js/live_search.js
+Author: Thiago G Goncalves, thiago_goncalves@student.uml.edu
+ 
+This is client side search engine 
+that matched your query just on my webstie.
+
+  Created on 10/11/15 by Thiago Goncalves 
  */
 
 
 
+
+//give the search box functionality.
 $(document).ready(function () {
     keypress_live();
-    focus();
 });
+
+
+//looks at the website json file information and search those URLs.
 function result_page(str) {
     if (str.length <= 1) {
         return;
@@ -23,6 +29,9 @@ function result_page(str) {
         delocalize_page_variable(info[i], str);
     }
 }
+
+
+//fetching the page information and matching a the search query.
 function delocalize_page_variable(json_object, str) {
     $.get(json_object.url, function (data) {
         var result = $('<div/>').html(data).text().toLowerCase();
@@ -38,6 +47,8 @@ function delocalize_page_variable(json_object, str) {
     });
 }
 
+
+//This works the same as a substring. Going to update that soon.
 function fetch_sentence(string, index) {
     var end = "";
     var start = "";
@@ -61,16 +72,21 @@ function fetch_sentence(string, index) {
 
 
 
+//listen to the keyboard events,
 function keypress_live() {
+    
+    //any character to display 
     $("#live_search").keypress(function (e) {
         clear_results(document.getElementById("live_search_result"));
         result_page($(this).val() + String.fromCharCode(e.keyCode));
     });
+    
+    //any key pressed, even enter, backspace, delete.
     $("#live_search").keydown(function (event) {
         clear_results(document.getElementById("live_search_result"));
-        if (event.which === 13) {
+        if (event.which === 13) { //enter
             result_page($(this).val());
-        } else if (event.which === 8) {
+        } else if (event.which === 8) { //backspace
             var val = $(this).val();
             var str = val.substring(0, val.length - 1);
             result_page(str);
@@ -78,6 +94,8 @@ function keypress_live() {
     });
 }
 
+
+//create the hearder in the search engine. Project, Query Match, GitHub Project File(s)
 function create_header() {
     var element = document.getElementById("live_search_result");
     var tr = document.createElement("li");
@@ -94,6 +112,8 @@ function create_header() {
 
 }
 
+
+//the result to display to the client is done with this function.
 function display_result(string, json_object, query) {
 
     var element = $("#live_search_result");
@@ -105,21 +125,10 @@ function display_result(string, json_object, query) {
 }
 
 
-function focus() {
-// $("#live_search").focusin(function () {
-// dynamic_call('livesearch');
-// });
-//  $("#live_search").focusout(function () {
-// load_lastTab();
-//  });
-}
-
-
 /*
  This highligh effect all credit is given to:
  http://stackoverflow.com/questions/8644428/how-to-highlight-text-using-javascript
  **/
-
 function spanHighlight(query, data)
 {
     var result = "";
@@ -131,6 +140,9 @@ function spanHighlight(query, data)
     return result;
 }
 
+
+
+//Search Engine dynamic html structure  
 function createHTMLObject(json_object, data, query) {
     var file_div = create_github_div(json_object.gib_hub_url + json_object.url);
     
@@ -158,17 +170,17 @@ function createHTMLObject(json_object, data, query) {
     // col_md_2_a.append(gli_md_1);
     // col_md_2_b.append(span_md_2_b);
     col_md_2_b.append($(file_div));
-
     return row;
 }
 
+
+//returns created element from the given paramenters.
 function create_dynamic_div(tag, className, attr, data) {
     var str = '<' + tag + ' class="' + className + '" ' + attr + '>' + data + ' </tag>';
     return $(str);
 }
 
-
-
+// A function adding to the string prototype, if the given suffix ends with given the parameter returns a boolean.
 String.prototype.endsWith = function (suffix) {
     return RegExp(suffix + "$").test(this);
-}
+};
