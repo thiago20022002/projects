@@ -83,10 +83,9 @@ function create_header() {
     var tr = document.createElement("li");
     tr.setAttribute("class", "list-group-item");
     var s = "<div class='row'>\
-                <div class='col-md-1'></div>\
                 <div class='col-md-2'>Project Name</div>\
                 <div class='col-md-6'>Query Result</div>\
-                <div class='cold-md-2'>GitHub Project File(s)</div>\
+                <div class='cold-md-4'>GitHub Project File(s)</div>\
             </div>";
     var htmlObject = document.createElement('div');
     htmlObject.innerHTML = s;
@@ -134,28 +133,30 @@ function spanHighlight(query, data)
 
 function createHTMLObject(json_object, data, query) {
     var file_div = create_github_div(json_object.gib_hub_url + json_object.url);
-    ;
+    
     for (var i = 0; i < json_object.files.length; i++) {
         file_div += create_github_div(json_object.gib_hub_url + json_object.files[i].file);
     }
 
     var row = create_dynamic_div("div", "row", "", "");
-    var col_md_1 = create_dynamic_div("div", "col-md-1", "", "");
+    //  var col_md_1 = create_dynamic_div("div", "col-md-1", "", "");
     var col_md_2_a = create_dynamic_div("div", "col-md-2", "", "");
     var col_md_6 = create_dynamic_div("div", "col-md-6", "", spanHighlight(query, data));
-    var col_md_2_b = create_dynamic_div("div", "col-md-2", "", "");
-    var gli_md_1 = create_dynamic_div("a", "pointer", "onclick='dynamic_call(\"" + json_object.name + "\")'", "");
-    var span_gli_md_1 = create_dynamic_div("span", "glyphicon glyphicon-circle-arrow-right", "", "");
-    var gli_md_2 = create_dynamic_div("a", "pointer", "onclick='dynamic_call(\"" + json_object.name + "\")'", json_object.p_name);
-    var span_md_2_b = create_dynamic_div("span", "fa fa-github", "", "");
-    row.append(col_md_1);
+    var col_md_2_b = create_dynamic_div("div", "col-md-4 btn-group", "aria-label='...'", "");
+   // var span_gli_a_1 = create_dynamic_div("span", "btn-info glyphicon glyphicon-circle-arrow-right", "", "");
+    var gli_md_a_1 = create_dynamic_div("a", "pointer", "onclick='dynamic_call(\"" + json_object.name + "\")'", " " + json_object.p_name);
+
+    // var gli_md_2 = create_dynamic_div("a", "pointer", "onclick='dynamic_call(\"" + json_object.name + "\")'", json_object.p_name);
+    //var span_md_2_b = create_dynamic_div("span", "fa fa-github", "", "");
+    //row.append(col_md_1);
     row.append(col_md_2_a);
     row.append(col_md_6);
     row.append(col_md_2_b);
-    col_md_1.append(gli_md_1);
-    gli_md_1.append(span_gli_md_1);
-    col_md_2_a.append(gli_md_2);
-    col_md_2_b.append(span_md_2_b);
+   // col_md_2_a.append(span_gli_a_1);
+    col_md_2_a.append(gli_md_a_1);
+    // gli_md_1.append(span_gli_md_1);
+    // col_md_2_a.append(gli_md_1);
+    // col_md_2_b.append(span_md_2_b);
     col_md_2_b.append($(file_div));
 
     return row;

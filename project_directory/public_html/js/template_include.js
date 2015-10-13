@@ -67,20 +67,27 @@ function load_lastTab() {
 function load_file_data(json_object) {
     var element = document.getElementById("git_pages");
     clear_results(element);
-    var file_div = create_github_div(json_object.gib_hub_url+json_object.url);
+
+    var file_div = create_github_div(json_object.gib_hub_url + json_object.url);
     for (var i = 0; i < json_object.files.length; i++) {
         file_div += create_github_div(json_object.gib_hub_url + json_object.files[i].file);
     }
-   
+
     var htmlObject = document.createElement('div');
+    htmlObject.setAttribute("class", "btn-group");
+    // htmlObject.setAttribute("role", "toolbar");
+    htmlObject.setAttribute("aria-label", "...");
     htmlObject.innerHTML = file_div;
     element.appendChild(htmlObject);
 
 }
 
-function create_github_div(url){
+function create_github_div(url) {
     var context = getFileType(url);
-    return "<a target='_blank' href='" + url+ "'> " + context + "</a>"
+    var div = '<a target="_blank" href="' + url+ '" type="button" class="btn btn-default"><span class="bootstrap-theme fa fa-github">' + context;
+    // div += "<div target='_blank' href='" + url+ "' role='group' class='btn-group btn-sm'>" + context + "</div>"; //<span class='fa fa-github'> 
+    div += '</a>';
+    return div;
 }
 
 
