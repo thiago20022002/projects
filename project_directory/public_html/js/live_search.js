@@ -1,11 +1,11 @@
 /**
  File:  js/live_search.js
-Author: Thiago G Goncalves, thiago_goncalves@student.uml.edu
+ Author: Thiago G Goncalves, thiago_goncalves@student.uml.edu
  
-This is client side search engine 
-that matched your query just on my webstie.
-
-  Created on 10/11/15 by Thiago Goncalves 
+ This is client side search engine 
+ that matched your query just on my website.
+ 
+ Created on 10/11/15 by Thiago Goncalves 
  */
 
 
@@ -74,13 +74,13 @@ function fetch_sentence(string, index) {
 
 //listen to the keyboard events,
 function keypress_live() {
-    
+
     //any character to display 
     $("#live_search").keypress(function (e) {
         clear_results(document.getElementById("live_search_result"));
         result_page($(this).val() + String.fromCharCode(e.keyCode));
     });
-    
+
     //any key pressed, even enter, backspace, delete.
     $("#live_search").keydown(function (event) {
         clear_results(document.getElementById("live_search_result"));
@@ -145,7 +145,7 @@ function spanHighlight(query, data)
 //Search Engine dynamic html structure  
 function createHTMLObject(json_object, data, query) {
     var file_div = create_github_div(json_object.gib_hub_url + json_object.url);
-    
+
     for (var i = 0; i < json_object.files.length; i++) {
         file_div += create_github_div(json_object.gib_hub_url + json_object.files[i].file);
     }
@@ -155,7 +155,7 @@ function createHTMLObject(json_object, data, query) {
     var col_md_2_a = create_dynamic_div("div", "col-md-2", "", "");
     var col_md_6 = create_dynamic_div("div", "col-md-6", "", spanHighlight(query, data));
     var col_md_2_b = create_dynamic_div("div", "col-md-4 btn-group", "aria-label='...'", "");
-   // var span_gli_a_1 = create_dynamic_div("span", "btn-info glyphicon glyphicon-circle-arrow-right", "", "");
+    // var span_gli_a_1 = create_dynamic_div("span", "btn-info glyphicon glyphicon-circle-arrow-right", "", "");
     var gli_md_a_1 = create_dynamic_div("a", "pointer", "onclick='dynamic_call(\"" + json_object.name + "\")'", " " + json_object.p_name);
 
     // var gli_md_2 = create_dynamic_div("a", "pointer", "onclick='dynamic_call(\"" + json_object.name + "\")'", json_object.p_name);
@@ -164,7 +164,7 @@ function createHTMLObject(json_object, data, query) {
     row.append(col_md_2_a);
     row.append(col_md_6);
     row.append(col_md_2_b);
-   // col_md_2_a.append(span_gli_a_1);
+    // col_md_2_a.append(span_gli_a_1);
     col_md_2_a.append(gli_md_a_1);
     // gli_md_1.append(span_gli_md_1);
     // col_md_2_a.append(gli_md_1);
