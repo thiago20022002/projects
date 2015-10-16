@@ -1,0 +1,38 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 13, 2015, 11:48:37 PM
+    Author     : Dr Goncalves
+*/
+
+.clickable-span{
+    cursor: pointer;
+}
+
+.toggle{
+    width: 120px;
+    padding: 15px;
+    margin: 5px;
+}
+
+#custom-menu {
+    //display: none;
+    position: absolute;
+    //overflow: hidden;
+    border: 1px solid #CCC;
+    white-space: nowrap;
+    z-index: 1000;
+    background: #FFF;
+    color: #333;
+    border-radius: 5px;
+}
+
+
+#custom-menu li:hover {
+    cursor: pointer;
+    background-color: #DEF;
+}
+
