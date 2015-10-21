@@ -3,24 +3,10 @@ function updateResults(data) {
     var menu = document.getElementById("custom-menu");
     clear_results(menu);
     var item = getJSONObject(json_object_server, data);
-    // var li = document.createElement("li");
+
     menu = $("#custom-menu");
     loop_thru(item, menu);
-
-    load_hover();
-
-
-//  jsonToGui(item, $("#custom-menu"), "-");
-    //
-    //
-//
-    //
-//console.log(item.word + "   " + item.antonyms + "  ---");
-    // createItem(menu, item.antonyms);
-
-    // li.innerHTML = item.synonyms;
-    // menu.appendChild(li);
-
+    //load_hover();
 }
 
 function loop_thru(json_ray, parent) {
@@ -63,10 +49,10 @@ function word_info(json_info, parent) {
 }
 
 function create_navagation(menu) {
-    return $("<ul class='list-group'>" + menu + "</ul>");
+    return $("<ul class='list-group nav_hover'>" + menu + "</ul>");
 }
 function create_list_item() {
-    return $("<li class='list-group-item'></li>");
+    return $("<li class='list-group-item toggle'></li>");
 }
 function create_data(json_o) {
     return  $("<li class='list-group-item'>" + json_o.popularity + "</li><li class='list-group-item'>" + json_o.sentimenal + "</li>");
@@ -79,7 +65,7 @@ function isObject(what) {
     return Object.prototype.toString.call(what) === '[object Object]';
 }
 
-function getHoveredElement() {
+function getHoveredElement(event) {
     $("#editor > span:hover").each(function () {
         //  if ($(this).data("hovered")) {
         updateResults($(this).attr("data-action"));
@@ -109,85 +95,92 @@ function display_data() {
 
 }
 
-$(document).bind("contextmenu", function (event) {
-    // if ($('#one:hover').length !== 0) {
-    getHoveredElement();
-    // var data = getHoveredElement();
-    event.preventDefault();
+//$(document).bind("contextmenu", function (event) {
+// 
+// 
+// 
+//$(document).bind("contextmenu", function (event) {
+//    getHoveredElement(event);
+//    event.preventDefault();
+//});
 
-    // Show contextmenu
-    //$("#custom-menu").finish().toggle().css({
-    //    top: event.pageY + "px",
-    //    left: event.pageX + "px"
-    // });
-    // }
-});
-
-/*
- $(document).bind("contextmenu", function (event) {
- // if ($('#one:hover').length !== 0) {
- updateResults('one');
- event.preventDefault();
- 
- 
- 
- console.log("context function");
- var element = $("#custom-menu");
- var y = event.pageY - element.height() / 2;
- var x = event.pageX - element.width();
- 
- 
- 
- //    $("<div class='custom-menu'>Custom menu</div>")
- //           .appendTo("body")
- //           .css({top: event.pageY + "px", left: event.pageX + "px"});
- 
- 
- $("#custom-menu").finish().toggle(100).css({
- top: event.pageY + "px;",
- left: event.pageX+ "px;"
- });
- //
- //}
- }).bind("click", function (e) {
- 
- //    if (!$(e.target).parents("#custom-menu").length > 0) {
- //       $("#custom-menu").hide();
- //  }
- });
- */
-$("#custom-menu li").click(function () {
+//$("#custom-menu li").click(function () {
 
 
     // This is the triggered action name
 
-    updateResults($(this).attr("data-action"));
+  //  updateResults($(this).attr("data-action"));
     //switch ($(this).attr("data-action")) {
 
 
     // }
 
     // Hide it AFTER the action was triggered
-    $("#custom-menu").hide(100);
+ //   $("#custom-menu").hide(100);
+//});
+
+$(".clickable-span").click(function (event) {
+    console.log("here");
+    getHoveredElement(event);
+    event.preventDefault();
 });
 
-$(".clickable").click(function () {
-    ($(this).attr("data-action"));
+/*
+$(document).bind("mousedown", function (e) {
+    
+    // If the clicked element is not the menu
+    if (!$(e.target).parents("#custom-menu").length > 0) {
+        // Hide it
+        $("#custom-menu").hide(100);
+    }
 });
-
+*/
 
 function load_hover() {
     if (!!('ontouchstart' in window)) {
     }
     else {
         $('.toggle[hold!="true"]').hide();
-        $('.produktbox').hover(function () {
-            $(this).children('.toggle').show("slow");
+        $('.nav_hover').hover(function () {
+            $(this).children('.toggle').show("fast");
         }, function () {
-            $(this).children('.toggle[hold!="true"]').hide("slow");
+            $(this).children('.toggle[hold!="true"]').hide("fast");
         });
     }
 }
 ;
+
+
+function createClickableWords() {
+    getSentence();
+    var sentence = $('#text_input').val();
+    var tokens = sentence.split(' ');
+
+    var show_div = document.getElementById("editor");
+    clear_results(show_div);
+    for (var i = 0; i < tokens.length; i++) {
+        console.log(tokens[i]);
+        var child = document.createElement("span");
+        child.setAttribute("class", "clickable-span");
+        child.setAttribute("data-action", tokens[i]);
+        child.innerHTML = tokens[i] + " ";
+        show_div.appendChild(child);
+    }
+}
+
+function getSentence()
+{
+    var sentence = $('#text_input').val();
+
+    var url = "http://50.177.145.179:8080/sappyTrends/servlet?service=word_information&sentence=" + encodeURIComponent(sentence);
+    var yql = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent('select * from html where url="' + url + '"') + '&format=xml';
+    $.get(yql).done(function (data) {
+    //    console.log(data);
+        var x = data.getElementsByTagName('body');
+        json_object_server = JSON.parse(x[0].innerHTML);
+           console.log(json_object_server);
+
+    });
+}
 
 

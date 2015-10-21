@@ -76,6 +76,20 @@
                 }
             ]
 
+        },
+        {
+            "name": "d_table",
+            "url": "content/gui-1/multi-table.html",
+            "p_name": "Dynamic Table",
+            "nav_id": "drop_bar",
+            "gib_hub_url": "https://github.com/thiago20022002/projects/blob/gh-pages/project_directory/public_html/",
+            "files":
+                    [
+                        {
+                            "file": "js/gui-1/multi-table.js"
+                        }
+                    ]
+
         }
 
     ]

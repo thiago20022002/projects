@@ -17,19 +17,19 @@ and open the template in the editor.
 
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <script src="../js/sappy_json_gui.js"></script>
+        <link rel="stylesheet" href="../css/overload_bootstrap.css">
+
 
     </head>
     <body>
-        <div class="form-group">                                                                                                                     
-            <!-- property text in the json data-->                                                                                                     
-            <label for="text_input">container text output</label>                                                                                      
-            <input id="text_input" type="search" class="form-control input-md" placeholder="text"/>                                                    
-        </div>  
 
-        <div class="form-group">                                                                                                
-            <button  class="btn btn-primary" onclick="getSentence()">Get Data</button>                                                             
-        </div> 
-        
-        <div id="dump"></div>
+        <div id="dump">
+            <div class="col-md-2">
+                <p class="test">
+                    One <span class="positive_green">day</span> the earth will <span class="negative_red">
+                        destroy</span> itself.
+                </p>
+            </div>
+        </div>
     </body>
 </html>

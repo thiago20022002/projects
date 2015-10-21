@@ -49,7 +49,11 @@ function includeControl() {
             node.last_element = findInfomationByName('home');
             node.current_element = findInfomationByName('home');
             dynamic_call(node.current_element.name);
+
+            param_nav();
         });
+
+
 
     });
 }
@@ -71,6 +75,7 @@ function dynamic_nav(json_object) {
 
 //The client control function, update the page.
 function dynamic_call(name) {
+    console.log(name);
     var j_object = findInfomationByName(name);
     dynamic_nav(j_object);
     load_content(j_object);
@@ -135,4 +140,21 @@ function clear_results(element) {
     while (element.firstChild) {
         element.removeChild(element.firstChild);
     }
+}
+
+function param_nav() {
+
+    var parameters = null;
+    if (location.search !== "") {
+        parameters = location.search.substr(1);
+    }
+    if (parameters !== null && parameters !== "") {
+        parameters = parameters.split("&");
+        parameters = $.grep(parameters, function (oneString, index) {
+            return (oneString.indexOf("page") !== -1);
+        });
+        var page = parameters[0].split("=")[1];
+        dynamic_call(page);
+    }
+  
 }
