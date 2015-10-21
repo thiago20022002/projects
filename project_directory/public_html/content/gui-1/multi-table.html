@@ -1,16 +1,34 @@
 
 <h1>Dynamic Table</h1>
+<div class="col-md-12">
+    <div class="col-md-4">
+        <fieldset id="assign5_form">
+            <legend>&nbsp;Enter desired values :&nbsp;</legend> <!-- from professor Heines website ref above -->
+            <form id="form_table" action="" method="GET">     <!--Submit Panel -->
+                <div class="form-group">
+                    <input type="hidden" value="d_table" name="page">
+                    <input class="form-control" type="text" name="x_start" placeholder="Minimum X">
+                    <br>
+                    <input class="form-control" type="text" name="x_end" placeholder="Maximum X">
+                </div>
+                <br>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="y_start" placeholder="Minimum Y">
+                    <br>
+                    <input class="form-control" type="text" name="y_end" placeholder="Maximum Y">
+                </div>
 
-<div class="table-responsive">
-
-
-    <table class="table">
-        <thead id="head_name">
-        </thead>
-        <tbody id="body_content">
-        </tbody>
-    </table>
+                <button class="btn btn-default bootstrap-theme" type="submit"> Generate Table</button><br>
+            </form>    <!-- End Submit Panel -->
+        </fieldset>
+    </div>
+    <div class="col-md-8">
+        <table class="table boxDiv">
+            <thead id="head_name">
+            </thead>
+            <tbody id="body_content">
+            </tbody>
+        </table>
+    </div>
 </div>
-<button class="btn btn-primary" onclick="fetch_params()"></button>
-
 <script src="js/gui-1/multi-table.js"></script>

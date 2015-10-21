@@ -42,42 +42,52 @@ function getPara(parameters, query) {
 
 function multiplication(x_start, y_start, x_end, y_end) {
     var body = $("#body_content");
-    clear_results(document.getElementById('body_content'));
-
-
     var head = $("#head_name");
-    var he_col = head.append('<tr></tr>');
+    clear_results(document.getElementById('body_content'));
     clear_results(document.getElementById('head_name'));
 
 
-    for (var xi = y_start; xi <= y_end; xi++) {
-        if (xi === x_start) {
-            var h = createHeader(xi, ' ');
-          //  he_col.append(h);
+
+    var he_col = $('<tr></tr>');
+  
+    for (var yi = y_start; yi < y_end; yi++) {
+
+        var r = createRow();
+        if (yi === y_start) {
+            he_col.append("<th></th>");
         }
-        var r = createRow(' ', ' ');
-        for (var yi = x_start; yi <= x_end; yi++) {
-            if (yi === (y_start)) {
-           //     r.append(createHeader(xi, 'scope="row"'));
+        for (var xi = x_start; xi < x_end; xi++) {
+            if (yi === y_start) {
+                he_col.append(createHeaderHor(xi));
             }
+            if (xi === x_start) {
+                r.append(createHeaderVer((yi)));
+            }
+            r.append(creteColumn((xi * yi)));
 
-            r.append(creteColumn(yi * xi));
+
         }
-
         body.append(r);
     }
+      head.append(he_col);
+
 }
 
-function createRow(data) {
-    return $('<tr>' + data + '</tr>');
+function createRow() {
+    return $('<tr></tr>');
 }
 
-function createHeader(data, attr) {
-    return $('<th ' + attr + '>' + data + '</th>');
+function createHeaderVer(data) {
+    return $('<th class="grayHeader" scope="row">' + data + '</th>');
+}
+function createHeaderHor(data) {
+    return $('<th class="grayHeader">' + data + '</th>');
 }
 
 function creteColumn(data) {
     return $("<td>" + data + "</td>");
 }
 
-fetch_params();
+$(document).ready(function(){
+    fetch_params();
+});
