@@ -28,7 +28,7 @@ function fetch_params() {
         var y_start = getPara(parameters, "y_start")[0].split("=")[1];
         var y_end = getPara(parameters, "y_end")[0].split("=")[1];
 
-        multiplication(x_start, y_start, x_end, y_end);
+        multiplication(parseInt(x_start), parseInt(y_start), parseInt(x_end), parseInt(y_end));
     }
 
 }
@@ -40,36 +40,65 @@ function getPara(parameters, query) {
 }
 
 
+function validate(event) {
+     clear_results(document.getElementById('message'));
+    if(validateHelper("x_start", event) || validateHelper("y_start",event) ||
+           validateHelper("x_end",event) ||  validateHelper("y_end",event)){
+       return false;
+    }
+    return true;
+}
+function validateHelper(var_val, event){
+    var value = $("#"+var_val).val();
+    
+    if (value === "") {
+        $("#warning").html(getStringIdMap(var_val)+" value not allowed");
+       
+        return true;
+    }
+    return false;
+}
+function getStringIdMap(str){
+    switch(str){
+        case "x_start":
+            return "Minimum X";
+        case "x_end":
+            return "Maximum X";
+        case "y_start":
+            return "Minimum Y";
+        case "y_end":
+            return "Maximum Y";
+    }
+}
+
+
 function multiplication(x_start, y_start, x_end, y_end) {
+    
+
     var body = $("#body_content");
     var head = $("#head_name");
     clear_results(document.getElementById('body_content'));
     clear_results(document.getElementById('head_name'));
-
-
-
     var he_col = $('<tr></tr>');
-  
-    for (var yi = y_start; yi < y_end; yi++) {
+    for (var i = y_start; i < y_end; i++) {
 
         var r = createRow();
-        if (yi === y_start) {
+        if (i === y_start) {
             he_col.append("<th></th>");
         }
         for (var xi = x_start; xi < x_end; xi++) {
-            if (yi === y_start) {
+            if (i === y_start) {
                 he_col.append(createHeaderHor(xi));
             }
             if (xi === x_start) {
-                r.append(createHeaderVer((yi)));
+                r.append(createHeaderVer((i)));
             }
-            r.append(creteColumn((xi * yi)));
-
+            r.append(creteColumn((xi * i)));
 
         }
         body.append(r);
     }
-      head.append(he_col);
+    head.append(he_col);
 
 }
 
@@ -88,6 +117,6 @@ function creteColumn(data) {
     return $("<td>" + data + "</td>");
 }
 
-$(document).ready(function(){
+$(document).ready(function () {
     fetch_params();
 });
