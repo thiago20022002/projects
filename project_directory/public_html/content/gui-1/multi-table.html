@@ -1,12 +1,26 @@
 
+
+<!--
+ File:  content/gui-1/multi-table.html
+ Author: Thiago G Goncalves, thiago_goncalves@student.uml.edu
+
+ content data to display in the dyanamic table page.
+
+ Created on 10/22/15 by Thiago Goncalves 
+-->
+
+
+
+
 <h1>Dynamic Table</h1>
 <div class="col-md-12">
     <div class="col-md-4">
         <fieldset id="assign5_form">
+          
             <legend>&nbsp;Enter desired values</legend> <!-- from professor Heines website ref above -->
             <form id="form_table" action="" method="GET" onsubmit="return validate()">     <!--Submit Panel -->
                 <div class="form-group">
-                    <input type="hidden" value="d_table" name="page">
+                    <input type="hidden" value="d_table" name="page">  <!--hidden static value to be passed as argument -->
                     <input id="x_start" class="form-control" type="text" name="x_start" placeholder="Minimum X">
                     <br>
                     <input id="x_end" class="form-control" type="text" name="x_end" placeholder="Maximum X">
@@ -21,16 +35,20 @@
                 <button class="btn btn-default bootstrap-theme" type="submit"> Generate Table</button><br>
             </form>    <!-- End Submit Panel -->
         </fieldset>
+        <!-- warning to be displayed to the user if validation is wrong -->
         <div id="warning">
         </div>
     </div>
     <div class="col-md-8">
         <table class="table boxDiv">
+            <!-- header of the table -->
             <thead id="head_name">
             </thead>
+            <!-- result to be displayed to the user -->
             <tbody id="body_content">
             </tbody>
         </table>
     </div>
 </div>
+<!-- load script at the end of page when all html content has been loaded -->
 <script src="js/gui-1/multi-table.js"></script>
