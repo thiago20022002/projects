@@ -48,7 +48,7 @@ function includeControl() {
             web_site_information = data;
             node.last_element = findInfomationByName('home');
             node.current_element = findInfomationByName('home');
-            dynamic_call(node.current_element.name);
+            // dynamic_call(node.current_element.name);
 
             param_nav();
         });
@@ -142,8 +142,10 @@ function clear_results(element) {
     }
 }
 
-function param_nav() {
 
+//this function will respond to the user request giving him the request page.
+function param_nav() {
+    var page = "home";
     var parameters = null;
     if (location.search !== "") {
         parameters = location.search.substr(1);
@@ -153,8 +155,12 @@ function param_nav() {
         parameters = $.grep(parameters, function (oneString, index) {
             return (oneString.indexOf("page") !== -1);
         });
-        var page = parameters[0].split("=")[1];
-        dynamic_call(page);
+        page = parameters[0].split("=")[1];
+        if (page === "" || page === undefined) {
+            page = "home";
+        }
     }
-  
+
+    dynamic_call(page);
+
 }
