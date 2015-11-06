@@ -8,4 +8,51 @@
  Created on 11/4/15 by Thiago Goncalves 
 -->
 
-<h1>TEST!</h1>
+<h1>Dynamic Table using JQuery Plug In</h1>
+<div class="col-md-12">
+    <div class="col-md-4">
+        <fieldset id="assign5_form">
+
+            <legend>&nbsp;Enter desired values</legend> <!-- from professor Heines website ref above -->
+            <form name="form_table" id="form_table" action="" method="GET" >     <!--Submit Panel -->
+                <div class="form-group">
+                    
+                    <input type="hidden" value="d_table_v2" name="page">  <!--hidden static value to be passed as argument -->
+                    <label for="x_start">X START :</label>
+                    <input id="x_start" class="form-control" type="text" name="x_start" placeholder="Minimum X">
+                    <br>
+                    <label for="x_end">X END :</label>
+                    <input id="x_end" class="form-control" type="text" name="x_end" placeholder="Maximum X">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="y_start">Y START :</label>
+                    <input id="y_start" class="form-control" type="text" name="y_start" placeholder="Minimum Y">
+                    <br>
+                    <label for="y_end">Y END :</label>
+                    <input id="y_end" class="form-control" type="text" name="y_end" placeholder="Maximum Y">
+                </div>
+
+                <button class="btn btn-default bootstrap-theme" type="submit"> Generate Table</button><br>
+            </form>    <!-- End Submit Panel -->
+        </fieldset>
+        <!-- warning to be displayed to the user if validation is wrong -->
+       
+    </div>
+    <div class="col-md-8">
+        <table class="table boxDiv">
+            <!-- header of the table -->
+            <thead id="head_name">
+            </thead>
+            <!-- result to be displayed to the user -->
+            <tbody id="body_content">
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- load script at the end of page when all html content has been loaded -->
+
+<script src="js/jquery/dist/jquery.validate.min.js"></script>
+<script src="js/jquery/dist/additional-methods.js"></script>
+<script src="js/gui-1/multi-table-v2.js"></script>
+<script src="js/gui-1/multi-table.js"></script>

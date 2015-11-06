@@ -92,5 +92,9 @@ pre {
 
 .error { border: 1px solid #f00; }
 
+#form_table label.error {
+color:red;
+}
+
 
 
