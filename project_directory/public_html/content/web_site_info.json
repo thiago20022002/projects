@@ -64,7 +64,6 @@
             ]
 
         },
-       
         {
             "name": "d_table",
             "url": "content/gui-1/multi-table.html",
@@ -79,7 +78,6 @@
                     ]
 
         },
-        
         {
             "name": "d_table_v2",
             "url": "content/gui-1/multi-table-v2.html",
@@ -90,11 +88,15 @@
                     [
                         {
                             "file": "js/gui-1/multi-table-v2.js"
+                        },
+                        {
+                            "file": "js/gui-1/multi-table.js"
+
                         }
                     ]
 
         }
-        
+
 
     ]
 }

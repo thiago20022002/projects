@@ -8,36 +8,34 @@
  Created on 11/4/15 by Thiago Goncalves 
 -->
 
-<h1>Dynamic Table using JQuery Plug In</h1>
+<h1>Dynamic Table using JQuery Validator</h1>
 <div class="col-md-12">
     <div class="col-md-4">
         <fieldset id="assign5_form">
 
             <legend>&nbsp;Enter desired values</legend> <!-- from professor Heines website ref above -->
             <form name="form_table" id="form_table" action="" method="GET" >     <!--Submit Panel -->
+                <input type="hidden" value="d_table_v2" name="page">  <!--hidden static value to be passed as argument -->
+
                 <div class="form-group">
-                    
-                    <input type="hidden" value="d_table_v2" name="page">  <!--hidden static value to be passed as argument -->
-                    <label for="x_start">X START :</label>
-                    <input id="x_start" class="form-control" type="text" name="x_start" placeholder="Minimum X">
-                    <br>
-                    <label for="x_end">X END :</label>
-                    <input id="x_end" class="form-control" type="text" name="x_end" placeholder="Maximum X">
+                    <input id="x_start" class="form-control" type="text" name="x_start" placeholder="Minimum X" maxlength="6">
+                </div>
+                <div class="form-group">
+                    <input id="x_end" class="form-control" type="text" name="x_end" placeholder="Maximum X" maxlength="6">
                 </div>
                 <br>
                 <div class="form-group">
-                    <label for="y_start">Y START :</label>
-                    <input id="y_start" class="form-control" type="text" name="y_start" placeholder="Minimum Y">
-                    <br>
-                    <label for="y_end">Y END :</label>
-                    <input id="y_end" class="form-control" type="text" name="y_end" placeholder="Maximum Y">
+                    <input id="y_start" class="form-control" type="text" name="y_start" placeholder="Minimum Y" maxlength="6">
+                </div>
+                <div class="form-group">
+                    <input id="y_end" class="form-control" type="text" name="y_end" placeholder="Maximum Y" maxlength="6">
                 </div>
 
                 <button class="btn btn-default bootstrap-theme" type="submit"> Generate Table</button><br>
             </form>    <!-- End Submit Panel -->
         </fieldset>
         <!-- warning to be displayed to the user if validation is wrong -->
-       
+
     </div>
     <div class="col-md-8">
         <table class="table boxDiv">
