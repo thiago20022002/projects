@@ -9,8 +9,6 @@
  */
 
 
-
-
 //give the search box functionality.
 $(document).ready(function () {
     keypress_live();
@@ -151,24 +149,18 @@ function createHTMLObject(json_object, data, query) {
     }
 
     var row = create_dynamic_div("div", "row", "", "");
-    //  var col_md_1 = create_dynamic_div("div", "col-md-1", "", "");
+    
     var col_md_2_a = create_dynamic_div("div", "col-md-2", "", "");
     var col_md_6 = create_dynamic_div("div", "col-md-6", "", spanHighlight(query, data));
     var col_md_2_b = create_dynamic_div("div", "col-md-4 btn-group", "aria-label='...'", "");
-    // var span_gli_a_1 = create_dynamic_div("span", "btn-info glyphicon glyphicon-circle-arrow-right", "", "");
     var gli_md_a_1 = create_dynamic_div("a", "pointer", "onclick='dynamic_call(\"" + json_object.name + "\")'", " " + json_object.p_name);
-
-    // var gli_md_2 = create_dynamic_div("a", "pointer", "onclick='dynamic_call(\"" + json_object.name + "\")'", json_object.p_name);
-    //var span_md_2_b = create_dynamic_div("span", "fa fa-github", "", "");
-    //row.append(col_md_1);
+    
     row.append(col_md_2_a);
     row.append(col_md_6);
     row.append(col_md_2_b);
-    // col_md_2_a.append(span_gli_a_1);
+    
     col_md_2_a.append(gli_md_a_1);
-    // gli_md_1.append(span_gli_md_1);
-    // col_md_2_a.append(gli_md_1);
-    // col_md_2_b.append(span_md_2_b);
+    
     col_md_2_b.append($(file_div));
     return row;
 }

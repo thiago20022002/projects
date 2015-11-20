@@ -46,6 +46,7 @@ function includeControl() {
         });
         $.get("content/web_site_info.json", function (data) {
             web_site_information = data;
+            console.log(web_site_information);
             node.last_element = findInfomationByName('home');
             node.current_element = findInfomationByName('home');
             // dynamic_call(node.current_element.name);
