@@ -84,22 +84,22 @@ $(document).ready(function () {
             },
             y_start: {
                 required: "must not be empty",
-                number: "Must be a number",
+                number: "Not number",
                 min: "not greator than 0."
             },
             x_end: {
                 required: "must not be empty",
                 number: "Must be a number",
-                greatorThan: "must be greator X value ",
+                greatorThan: "MIN >= MAX",
                 min: "greator than 1.",
-                range_restriction: " must not exceed 20"
+                range_restriction: " must not exceed 15"
             },
             y_end: {
                 required: "must not be empty",
                 number: "Must be a number",
-                greatorThan: "must be greator Y value",
+                greatorThan: "MIN >= MAX",
                 min: "greator than 1.",
-                range_restriction: "must not exceed 20"
+                range_restriction: "must not exceed 15"
             }
         },
         /* overriding the function and setting defining my own defintion.*/

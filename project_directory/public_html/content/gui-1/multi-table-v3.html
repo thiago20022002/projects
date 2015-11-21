@@ -19,16 +19,26 @@ Created on 11/18/15 by Thiago Goncalves
             <form name="form_table" id="form_table"  >     <!--Submit Panel -->
                 <input type="hidden" value="d_table_v3" name="page">  <!--hidden static value to be passed as argument -->
 
-
+                <div class="col-md-12">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-5"><p style="font-weight:bold">MIN</p></div>
+                    <div class="col-md-5"><p style="font-weight:bold">MAX</p></div>
+                </div>
+                <br>
+                <br>
                 <!-- Full row-->
                 <div class="col-md-12">
-
+                    <div class="col-md-2"><label>X</label>
+                        </div>
                     <!-- split middle-->
-                    <div class="col-md-6 ">
-
+                    <div class="col-md-5 ">
+                        
+                        
+                        
                         <!-- Group-->
                         <div class="form-group input-group">
-                            <input id="x_start" class="form-control" type="text" name="x_start" placeholder="Minimum X" maxlength="6">
+                            
+                            <input id="x_start" class="form-control" type="text" name="x_start" placeholder="Min" maxlength="6">
                             <div id="sliderXBegin"  class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all form-control">
                                 <a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 50%;"></a>
                             </div>
@@ -36,12 +46,12 @@ Created on 11/18/15 by Thiago Goncalves
                     </div>
 
                     <!-- split middle-->    
-                    <div class="col-md-6">
+                    <div class="col-md-5">
 
 
                         <!-- group col-->
                         <div class="form-group input-group">
-                            <input id="x_end" class="form-control" type="text" name="x_end" placeholder="Maximum X" maxlength="6">
+                            <input id="x_end" class="form-control" type="text" name="x_end" placeholder="Max" maxlength="6">
                             <div id="sliderXEnd"  class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all form-control">
                                 <a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 50%;"></a>
                             </div>
@@ -54,11 +64,13 @@ Created on 11/18/15 by Thiago Goncalves
 
                 <!-- full row-->
                 <div class="col-md-12">
-
+<div class="col-md-2"><label>Y</label>
+                        </div>
+                    
                     <!-- split middle-->
-                    <div class="col-md-6 ">
+                    <div class="col-md-5">
                         <div class="form-group input-group">
-                            <input id="y_start"  class="form-control" type="text" name="y_start" placeholder="Minimum Y" maxlength="6">
+                            <input id="y_start"  class="form-control" type="text" name="y_start" placeholder="Min" maxlength="6">
                             <div id="sliderYStart" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all form-control">
                                 <a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 50%;"></a>
                             </div>
@@ -66,11 +78,11 @@ Created on 11/18/15 by Thiago Goncalves
                     </div>
 
                     <!-- split middle-->
-                    <div class="col-md-6">
+                    <div class="col-md-5">
 
                         <!-- Group-->
                         <div class="form-group input-group">
-                            <input id="y_end"  class="form-control" type="text" name="y_end" placeholder="Maximum Y" maxlength="6">
+                            <input id="y_end"  class="form-control" type="text" name="y_end" placeholder="Max" maxlength="6">
                             <div id="sliderYEnd" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all form-control">
                                 <a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 50%;"></a>
                             </div>
