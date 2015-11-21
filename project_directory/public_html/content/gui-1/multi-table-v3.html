@@ -18,7 +18,7 @@ Created on 11/18/15 by Thiago Goncalves
             <legend>&nbsp;Enter desired values</legend> <!-- from professor Heines website ref above -->
             <form name="form_table" id="form_table"  >     <!--Submit Panel -->
                 <input type="hidden" value="d_table_v3" name="page">  <!--hidden static value to be passed as argument -->
-
+                <!--Header -->
                 <div class="col-md-12">
                     <div class="col-md-2"></div>
                     <div class="col-md-5"><p style="font-weight:bold">MIN</p></div>
@@ -28,16 +28,15 @@ Created on 11/18/15 by Thiago Goncalves
                 <br>
                 <!-- Full row-->
                 <div class="col-md-12">
+                    <!--Header -->
                     <div class="col-md-2"><label>X</label>
-                        </div>
+                    </div>
                     <!-- split middle-->
                     <div class="col-md-5 ">
-                        
-                        
-                        
+
                         <!-- Group-->
                         <div class="form-group input-group">
-                            
+
                             <input id="x_start" class="form-control" type="text" name="x_start" placeholder="Min" maxlength="6">
                             <div id="sliderXBegin"  class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all form-control">
                                 <a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 50%;"></a>
@@ -64,9 +63,10 @@ Created on 11/18/15 by Thiago Goncalves
 
                 <!-- full row-->
                 <div class="col-md-12">
-<div class="col-md-2"><label>Y</label>
-                        </div>
-                    
+                    <!--Header -->
+                    <div class="col-md-2"><label>Y</label>
+                    </div>
+
                     <!-- split middle-->
                     <div class="col-md-5">
                         <div class="form-group input-group">
@@ -103,22 +103,22 @@ Created on 11/18/15 by Thiago Goncalves
 
     </div>
     <div class="col-md-8">
-        
-                <!-- Jquery tabs id-->
+
+        <!-- Jquery tabs id-->
         <div id="tabs">
             <ul id="tabs_list_container">
-                
+
                 <!-- Create tab-->
                 <li><a href="#main">Create</a></li> 
-                
+
                 <!-- Edit tab-->
                 <li><a href="#edit">Edit</a></li>            
             </ul>
             <div id="edit">
                 <div class="col-md-12">
                     <div class="col-md-6">
-                        
-                         <!-- edit control list-->
+
+                        <!-- edit control list-->
                         <ul class="list-group" id="edit_list">
 
                         </ul>
@@ -127,7 +127,7 @@ Created on 11/18/15 by Thiago Goncalves
                     <div class="col-md-8"></div>
 
                 </div>
-                
+
                 <!-- button to remove active tabs-->
                 <button class="btn btn-default" onclick="remove_tabs()">REMOVE</button>
 
@@ -155,6 +155,6 @@ Created on 11/18/15 by Thiago Goncalves
 
 
 
- <!-- my js file -->
+<!-- my js file -->
 <script src="js/gui-1/multi-table-v3.js"></script>
 <script src="js/gui-1/jquery-tabs.js"></script>
