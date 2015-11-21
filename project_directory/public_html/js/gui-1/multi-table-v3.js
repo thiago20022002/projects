@@ -90,14 +90,14 @@ $(document).ready(function () {
             x_end: {
                 required: "must not be empty",
                 number: "Must be a number",
-                greatorThan: "MIN >= MAX",
+                greatorThan: "MIN > MAX",
                 min: "greator than 1.",
                 range_restriction: " must not exceed 15"
             },
             y_end: {
                 required: "must not be empty",
                 number: "Must be a number",
-                greatorThan: "MIN >= MAX",
+                greatorThan: "MIN > MAX",
                 min: "greator than 1.",
                 range_restriction: "must not exceed 15"
             }

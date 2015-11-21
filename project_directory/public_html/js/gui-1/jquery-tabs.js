@@ -155,9 +155,16 @@ function createNewTab() {
 }
 
 function main_tab() {
+    
+        $("#tabs").tabs("option", "active");
+       
+        $('#tabs').tabs('select', 1);
+       // alert(currentTab);
+    
+    
     clear_results(document.getElementById('body_content'));
     clear_results(document.getElementById('head_name'));
-
+     $("#tabs").tabs('select', 0);
     var body = $("#body_content");
     var head = $("#head_name");
 
