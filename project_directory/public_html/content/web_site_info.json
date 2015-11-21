@@ -105,11 +105,13 @@
             "files":
                     [
                         {
-                            "file": "js/gui-1/multi-table-v3.js"
+                            "file": "js/gui-1/multi-table-v3_1.js"
                         },
                         {
-                            "file": "js/gui-1/multi-table.js"
-
+                            "file": "css/overloaded_bootstrap.css"
+                        },
+                        {
+                            "file": "js/gui-1/jquery-tabs.js"
                         }
                     ]
 
