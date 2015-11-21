@@ -157,7 +157,7 @@ function createNewTab() {
 function main_tab() {
     
         $("#tabs").tabs("option", "active");
-       
+       //
         $('#tabs').tabs('select', 1);
        // alert(currentTab);
     
