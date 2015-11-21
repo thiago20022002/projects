@@ -1,9 +1,9 @@
 /**
- File:  js/gui-1/multi-page-v2.js
+ File:  js/gui-1/multi-page-v3_1.js
  Author: Thiago G Goncalves, thiago_goncalves@student.uml.edu
  
  This file contains the utility functions needed to perform pseudo form 
- processing.
+ processing using the Jquery plug in.
  
  some of these function were inspired by Jesse H. Heines.
 

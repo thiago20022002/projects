@@ -2,48 +2,13 @@
  File:  content/gui-1/multi-table-v3.html
  Author: Thiago G Goncalves, thiago_goncalves@student.uml.edu
 
- content data to display in the dyanamic table page.
+ content data to display in the dyanamic table page
 and tabs using the JQuery plug-in
- Created on 11/19/15 by Thiago Goncalves 
+
+
+Created on 11/18/15 by Thiago Goncalves 
 -->
 
-<!--
-<div>
-
-    <fieldset>
-        <legend id="legend">&nbsp;Please enter the table ranges&nbsp;</legend>
-        <form id="frm" action="" method="GET" novalidate="novalidate">
-            <input type="hidden" id="hidLang" name="language" value="English">
-            <table id="tblForm" border="0">
-                <tbody>
-                    <tr>
-                        <td id="mincol">Minimum Column Value</td>
-                        <td><input type="text" id="xBegin" name="xBegin"></td>
-                        <td><div id="sliderXBegin" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 25%;"></a></div></td>
-                    </tr>
-                    <tr>
-                        <td id="maxcol">Maximum Column Value</td>
-                        <td><input type="text" id="xEnd" name="xEnd"></td>
-                        <td><div id="sliderXEnd" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 95%;"></a></div></td>
-                    </tr>
-                    <tr>
-                        <td id="minrow">Minimum Row Value</td>
-                        <td><input type="text" id="yBegin" name="yBegin"></td>
-                        <td><div id="sliderYBegin" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 60%;"></a></div></td>
-                    </tr>
-                    <tr>
-                        <td id="maxrow">Maximum Row Value</td>
-                        <td><input type="text" id="yEnd" name="yEnd"></td>
-                        <td><div id="sliderYEnd" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 45%;"></a></div></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><input id="btnRegen" type="Submit" value="Regenerate Table"></td>
-                    </tr>
-                </tbody></table>
-        </form>
-    </fieldset>
-</div>
--->
 
 <h1>Dynamic Table using JQuery Validator</h1>
 <div class="col-md-12">
@@ -54,8 +19,14 @@ and tabs using the JQuery plug-in
             <form name="form_table" id="form_table"  >     <!--Submit Panel -->
                 <input type="hidden" value="d_table_v3" name="page">  <!--hidden static value to be passed as argument -->
 
+
+                <!-- Full row-->
                 <div class="col-md-12">
+
+                    <!-- split middle-->
                     <div class="col-md-6 ">
+
+                        <!-- Group-->
                         <div class="form-group input-group">
                             <input id="x_start" class="form-control" type="text" name="x_start" placeholder="Minimum X" maxlength="6">
                             <div id="sliderXBegin"  class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all form-control">
@@ -63,7 +34,12 @@ and tabs using the JQuery plug-in
                             </div>
                         </div>
                     </div>
+
+                    <!-- split middle-->    
                     <div class="col-md-6">
+
+
+                        <!-- group col-->
                         <div class="form-group input-group">
                             <input id="x_end" class="form-control" type="text" name="x_end" placeholder="Maximum X" maxlength="6">
                             <div id="sliderXEnd"  class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all form-control">
@@ -75,7 +51,11 @@ and tabs using the JQuery plug-in
                 <br>
                 <br>
                 <br>
+
+                <!-- full row-->
                 <div class="col-md-12">
+
+                    <!-- split middle-->
                     <div class="col-md-6 ">
                         <div class="form-group input-group">
                             <input id="y_start"  class="form-control" type="text" name="y_start" placeholder="Minimum Y" maxlength="6">
@@ -84,7 +64,11 @@ and tabs using the JQuery plug-in
                             </div>
                         </div>
                     </div>
+
+                    <!-- split middle-->
                     <div class="col-md-6">
+
+                        <!-- Group-->
                         <div class="form-group input-group">
                             <input id="y_end"  class="form-control" type="text" name="y_end" placeholder="Maximum Y" maxlength="6">
                             <div id="sliderYEnd" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all form-control">
@@ -97,7 +81,9 @@ and tabs using the JQuery plug-in
                 <br>
                 <br>
                 <div class="col-md-12">
-                    <button id="submit_btn" class="btn btn-default bootstrap-theme" > Generate Table</button><br>
+
+                    <!-- submit button-->
+                    <button id="submit_btn" class="btn btn-default bootstrap-theme" >Create Tab Table</button><br>
                 </div>
             </form>    <!-- End Submit Panel -->
         </fieldset>
@@ -105,10 +91,35 @@ and tabs using the JQuery plug-in
 
     </div>
     <div class="col-md-8">
+        
+                <!-- Jquery tabs id-->
         <div id="tabs">
             <ul id="tabs_list_container">
-                <li><a href="#main">Control Tab</a></li>            
+                
+                <!-- Create tab-->
+                <li><a href="#main">Create</a></li> 
+                
+                <!-- Edit tab-->
+                <li><a href="#edit">Edit</a></li>            
             </ul>
+            <div id="edit">
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        
+                         <!-- edit control list-->
+                        <ul class="list-group" id="edit_list">
+
+                        </ul>
+
+                    </div>
+                    <div class="col-md-8"></div>
+
+                </div>
+                
+                <!-- button to remove active tabs-->
+                <button class="btn btn-default" onclick="remove_tabs()">REMOVE</button>
+
+            </div>
             <div id="main">
                 <table class="table boxDiv">
                     <!-- header of the table -->
@@ -119,15 +130,19 @@ and tabs using the JQuery plug-in
                     </tbody>
                 </table>
             </div>
+
         </div>
 
     </div>
 </div>
 
 
-
+<!-- Jquery validation js-->
 <script src="js/jquery/dist/jquery.validate.min.js"></script>
 <script src="js/jquery/dist/additional-methods.js"></script>
 
+
+
+ <!-- my js file -->
 <script src="js/gui-1/multi-table-v3_1.js"></script>
 <script src="js/gui-1/jquery-tabs.js"></script>
