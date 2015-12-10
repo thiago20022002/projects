@@ -115,6 +115,20 @@
                         }
                     ]
 
+        },
+        {
+            "name": "scrabble_v1",
+            "url": "content/gui-1/scrabble-v1.html",
+            "p_name": "Scrabble V1",
+            "nav_id": "drop_bar",
+            "gib_hub_url": "https://github.com/thiago20022002/projects/blob/gh-pages/project_directory/public_html/",
+            "files":
+                    [
+                        {
+                            "file": "js/gui-1/scrabble-v1.js"
+                        }
+                    ]
+
         }
 
 

@@ -1,0 +1,86 @@
+/*
+ File:  cs/scrabble.css
+ Author: Thiago G Goncalves, thiago_goncalves@student.uml.edu
+    
+cascading style sheet to decorate the html.
+
+ Created on 12/7/15 by Thiago Goncalves 
+*/
+
+.letter-list{
+    font-size: 20px;
+    font-weight: bold;
+    color: royalblue;
+}
+
+.word-score{
+  
+    font-size: 15px;
+    font-weight: bold;
+    color: crimson;
+}
+.tile {
+    height: 30px;
+    width: 30px;
+}
+.restricted_size {
+    height: 26px;
+    width: 26px;
+    z-index: 999;
+}
+.total-score{
+    font-size: 23px;
+    font-weight: bold;
+    color: red; 
+}
+
+
+.normal_word{
+    border :1px solid lightblue;
+    background-color: gainsboro;
+}
+
+.double_word {
+
+    background-color: lightblue;
+}
+
+.tripple_word {
+    background-color: darkgreen;
+}
+
+.normal_letter{
+    border :2px solid lightblue;
+    background-color: gainsboro;
+}
+
+.double_letter {
+
+    background-color: darkcyan;
+}
+
+.tripple_letter {
+    background-color: lightgreen;
+}
+
+
+.allowed {
+    border :1px solid lightcoral;
+}
+
+.droppable_element {
+   background-color: rgba(255,0,0,  1);
+}
+.board{
+    list-style:none;
+    padding-left:0;
+}
+.display-inline {
+    display:inline-block;
+
+}
+
+
+
+
+

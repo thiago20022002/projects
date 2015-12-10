@@ -82,7 +82,6 @@ pre {
     border: 2px solid #90EE90;
     font-weight: bold;
     padding: 1px; 
-
 }
 
 .negative_red {
@@ -91,8 +90,7 @@ pre {
     font-weight: bold;
     border-radius: 25px;
     border: 2px solid #FF8989;;
-    padding: 1px; 
-
+    padding: 1px;
 }
 
 .grayHeader {
