@@ -55,6 +55,15 @@
             ]
         },
         {
+            "name": "webcars",
+            "url": "content/webcars.html",
+            "p_name": "Web Cars",
+            "nav_id": "drop_bar",
+            "gib_hub_url": "https://github.com/thiago20022002/projects/blob/gh-pages/project_directory/public_html/",
+            "files": [
+            ]
+        },
+        {
             "name": "mic1",
             "url": "content/mic1emulator.html",
             "p_name": "Mic-1 Emulator",
