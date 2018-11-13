@@ -5,7 +5,7 @@
             "url": "content/home.html",
             "p_name": "Home page",
             "nav_id": "home",
-            "gib_hub_url": "https://github.com/thiago20022002/projects/blob/gh-pages/project_directory/public_html/",
+            "gib_hub_url": "https://github.com/thiagogebrim/projects/blob/gh-pages/project_directory/public_html/",
             "files":
                     [
                         {
@@ -19,7 +19,7 @@
             "url": "content/solutions.html",
             "p_name": "Permutation Algorithm",
             "nav_id": "drop_bar",
-            "gib_hub_url": "https://github.com/thiago20022002/projects/blob/gh-pages/project_directory/public_html/",
+            "gib_hub_url": "https://github.com/thiagogebrim/projects/blob/gh-pages/project_directory/public_html/",
             "files": [
                 {
                     "file": "js/permutation.js"
@@ -31,7 +31,7 @@
             "url": "content/json2html.html",
             "p_name": "Dynamic Json Data",
             "nav_id": "drop_bar",
-            "gib_hub_url": "https://github.com/thiago20022002/projects/blob/gh-pages/project_directory/public_html/",
+            "gib_hub_url": "https://github.com/thiagogebrim/projects/blob/gh-pages/project_directory/public_html/",
             "files": [
                 {
                     "file": "js/dynamic_json_object/dynamic_json.js"
@@ -50,7 +50,7 @@
             "url": "content/sappyapp.html",
             "p_name": "Sappy Trends",
             "nav_id": "drop_bar",
-            "gib_hub_url": "https://github.com/thiago20022002/projects/blob/gh-pages/project_directory/public_html/",
+            "gib_hub_url": "https://github.com/thiagogebrim/projects/blob/gh-pages/project_directory/public_html/",
             "files": [
             ]
         },
@@ -59,7 +59,7 @@
             "url": "content/webcars.html",
             "p_name": "Web Cars",
             "nav_id": "drop_bar",
-            "gib_hub_url": "https://github.com/thiago20022002/projects/blob/gh-pages/project_directory/public_html/",
+            "gib_hub_url": "https://github.com/thiagogebrim/projects/blob/gh-pages/project_directory/public_html/",
             "files": [
             ]
         },
@@ -68,7 +68,7 @@
             "url": "content/mic1emulator.html",
             "p_name": "Mic-1 Emulator",
             "nav_id": "drop_bar",
-            "gib_hub_url": "https://github.com/thiago20022002/projects/blob/gh-pages/project_directory/public_html/",
+            "gib_hub_url": "https://github.com/thiagogebrim/projects/blob/gh-pages/project_directory/public_html/",
             "files": [
             ]
 
@@ -78,7 +78,7 @@
             "url": "content/gui-1/multi-table.html",
             "p_name": "Dynamic Table",
             "nav_id": "drop_bar",
-            "gib_hub_url": "https://github.com/thiago20022002/projects/blob/gh-pages/project_directory/public_html/",
+            "gib_hub_url": "https://github.com/thiagogebrim/projects/blob/gh-pages/project_directory/public_html/",
             "files":
                     [
                         {
@@ -92,7 +92,7 @@
             "url": "content/gui-1/multi-table-v2.html",
             "p_name": "Dynamic Table Using JQuery Plugin",
             "nav_id": "drop_bar",
-            "gib_hub_url": "https://github.com/thiago20022002/projects/blob/gh-pages/project_directory/public_html/",
+            "gib_hub_url": "https://github.com/thiagogebrim/projects/blob/gh-pages/project_directory/public_html/",
             "files":
                     [
                         {
@@ -110,7 +110,7 @@
             "url": "content/gui-1/multi-table-v3.html",
             "p_name": "Dynamic Table Using JQuery Plugin v3",
             "nav_id": "drop_bar",
-            "gib_hub_url": "https://github.com/thiago20022002/projects/blob/gh-pages/project_directory/public_html/",
+            "gib_hub_url": "https://github.com/thiagogebrim/projects/blob/gh-pages/project_directory/public_html/",
             "files":
                     [
                         {
@@ -130,7 +130,7 @@
             "url": "content/gui-1/scrabble-v1.html",
             "p_name": "Scrabble V1",
             "nav_id": "drop_bar",
-            "gib_hub_url": "https://github.com/thiago20022002/projects/blob/gh-pages/project_directory/public_html/",
+            "gib_hub_url": "https://github.com/thiagogebrim/projects/blob/gh-pages/project_directory/public_html/",
             "files":
                     [
                         {
